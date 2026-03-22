@@ -3,78 +3,49 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   lint-frontend:
-    name: Lint Frontend HTML/CSS/JS
+    name: Lint Frontend
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Install HTMLHint
-        run: npm install -g htmlhint
-
-      - name: Lint HTML
-        run: htmlhint index.html || true
-
-      - name: Check files exist
-        run: |
-          test -f index.html && echo "index.html found"
-          test -f style.css  && echo "style.css found"
-          test -f script.js  && echo "script.js found"
+      - run: npm install -g htmlhint
+      - run: htmlhint index.html || true
+      - run: test -f index.html && test -f style.css && test -f script.js
 
   test-backend:
-    name: Test Node.js Backend
+    name: Test Backend
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
+      - run: npm install
         working-directory: backend
-
-      - name: Check server.js syntax
-        run: node --check server.js && echo "server.js syntax OK"
+      - run: node --check server.js
         working-directory: backend
 
   deploy-frontend:
-    name: Deploy Frontend to GitHub Pages
+    name: Deploy to GitHub Pages
     needs: [lint-frontend, test-backend]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v4
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
-          exclude_assets: 'backend/**,*.md,.github/**'
 ```
 
----
-
-5. Press **Ctrl+S** to save
-6. In terminal:
+Then in terminal:
 ```
 git add .
-git commit -m "Fix CI/CD workflow errors"
+git commit -m "Fix YAML syntax error"
 git push
