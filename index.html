@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anush G | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="matrix-bg"></div>
+  <div class="scan-line"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">&lt;ANUSH_G /&gt;</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-status"><span class="blink">●</span> SECURE</div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">anush@cyberlab:~$</span>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line"><span class="prompt">$</span> <span class="cmd" id="typed-text"></span><span class="cursor">█</span></p>
+          <div id="hero-output" class="hero-output"></div>
+        </div>
+      </div>
+      <div class="hero-photo-box">
+        <label for="photo-upload" class="photo-upload-label" id="photo-label">
+          <div class="photo-frame" id="photo-frame">
+            <div class="photo-placeholder" id="photo-placeholder">
+              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="22" r="12" stroke="#00ff88" stroke-width="2"/>
+                <path d="M8 52c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="#00ff88" stroke-width="2"/>
+                <circle cx="30" cy="30" r="28" stroke="#00ff88" stroke-width="1" stroke-dasharray="4 4"/>
+              </svg>
+              <p>UPLOAD PHOTO</p>
+              <p class="small">Click to select image</p>
+            </div>
+            <img id="uploaded-photo" src="" alt="Anush G" style="display:none"/>
+          </div>
+        </label>
+        <input type="file" id="photo-upload" accept="image/*" style="display:none"/>
+        <div class="photo-caption">
+          <span class="tag">ID:</span> ANUSH_G
+          <br><span class="tag">ROLE:</span> BCA CYBER SEC
+          <br><span class="tag">STATUS:</span> <span class="blink green-blink">ACTIVE</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">scroll down ↓</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <span class="section-num">01.</span>
+      <h2>ABOUT<span class="accent">_ME</span></h2>
+      <div class="line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-intro">Hi, I'm <span class="highlight">Anush G</span> — a BCA student specializing in <span class="highlight">Cybersecurity</span>.</p>
+        <p>I'm passionate about ethical hacking, network security, and building secure web applications. Currently pursuing my Bachelor's in Computer Applications with a focus on defending digital infrastructure against modern threats.</p>
+        <p>I believe security isn't just a feature — it's a mindset built into every layer of development.</p>
+        <div class="about-tags">
+          <span class="tag-pill">Ethical Hacking</span>
+          <span class="tag-pill">Network Security</span>
+          <span class="tag-pill">Web Dev</span>
+          <span class="tag-pill">Linux</span>
+          <span class="tag-pill">CTF Player</span>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card"><div class="stat-num" data-count="15">0</div><div class="stat-label">Projects</div></div>
+        <div class="stat-card"><div class="stat-num" data-count="8">0</div><div class="stat-label">CTF Wins</div></div>
+        <div class="stat-card"><div class="stat-num" data-count="3">0</div><div class="stat-label">Certifications</div></div>
+        <div class="stat-card"><div class="stat-num" data-count="2">0</div><div class="stat-label">Years Study</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-num">02.</span>
+      <h2>SKILL<span class="accent">_SET</span></h2>
+      <div class="line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><span class="icon">🔐</span> Security</h3>
+        <div class="skill-bar-wrap"><span>Penetration Testing</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
+        <div class="skill-bar-wrap"><span>Network Analysis</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
+        <div class="skill-bar-wrap"><span>Vulnerability Assessment</span><div class="bar"><div class="bar-fill" data-w="70"></div></div></div>
+        <div class="skill-bar-wrap"><span>OWASP Top 10</span><div class="bar"><div class="bar-fill" data-w="85"></div></div></div>
+      </div>
+      <div class="skill-category">
+        <h3><span class="icon">💻</span> Development</h3>
+        <div class="skill-bar-wrap"><span>HTML/CSS/JS</span><div class="bar"><div class="bar-fill" data-w="90"></div></div></div>
+        <div class="skill-bar-wrap"><span>Node.js / Express</span><div class="bar"><div class="bar-fill" data-w="65"></div></div></div>
+        <div class="skill-bar-wrap"><span>Python</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
+        <div class="skill-bar-wrap"><span>PostgreSQL</span><div class="bar"><div class="bar-fill" data-w="60"></div></div></div>
+      </div>
+      <div class="skill-category">
+        <h3><span class="icon">🛠</span> Tools</h3>
+        <div class="skill-bar-wrap"><span>Kali Linux</span><div class="bar"><div class="bar-fill" data-w="82"></div></div></div>
+        <div class="skill-bar-wrap"><span>Wireshark</span><div class="bar"><div class="bar-fill" data-w="77"></div></div></div>
+        <div class="skill-bar-wrap"><span>Nmap / Metasploit</span><div class="bar"><div class="bar-fill" data-w="70"></div></div></div>
+        <div class="skill-bar-wrap"><span>Git / GitHub</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-num">03.</span>
+      <h2>PRO<span class="accent">JECTS</span></h2>
+      <div class="line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🔍</span>
+          <div class="project-links">
+            <a href="#" class="proj-link">GitHub ↗</a>
+          </div>
+        </div>
+        <h3>Network Vulnerability Scanner</h3>
+        <p>A Python-based tool that scans local networks for open ports, outdated services, and known CVEs using Nmap integration.</p>
+        <div class="project-tags"><span>Python</span><span>Nmap</span><span>CVE API</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🛡️</span>
+          <div class="project-links"><a href="#" class="proj-link">GitHub ↗</a></div>
+        </div>
+        <h3>Secure File Encryption Tool</h3>
+        <p>AES-256 based file encryption/decryption desktop app with a password manager and secure key storage.</p>
+        <div class="project-tags"><span>Python</span><span>AES-256</span><span>Tkinter</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🕸️</span>
+          <div class="project-links"><a href="#" class="proj-link">GitHub ↗</a></div>
+        </div>
+        <h3>Phishing Detection Extension</h3>
+        <p>A browser extension that analyses URLs in real-time and warns users about potential phishing websites using ML heuristics.</p>
+        <div class="project-tags"><span>JavaScript</span><span>ML</span><span>Chrome API</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">📊</span>
+          <div class="project-links"><a href="#" class="proj-link">GitHub ↗</a></div>
+        </div>
+        <h3>Log Analysis Dashboard</h3>
+        <p>Real-time web dashboard for parsing and visualising system logs to detect anomalies and potential intrusions.</p>
+        <div class="project-tags"><span>Node.js</span><span>Chart.js</span><span>PostgreSQL</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section id="workflow">
+    <div class="section-header">
+      <span class="section-num">04.</span>
+      <h2>DEV<span class="accent">_WORKFLOW</span></h2>
+      <div class="line"></div>
+    </div>
+    <p class="workflow-desc">My HOD's Modern Web Development Workflow — the pipeline I follow for every project:</p>
+    <div class="workflow-pipeline">
+      <div class="wf-step" data-step="1">
+        <div class="wf-icon">📁</div>
+        <div class="wf-label">Local Git<br>Repository</div>
+        <div class="wf-desc">Write code, commit changes locally using Git version control</div>
+      </div>
+      <div class="wf-arrow">→</div>
+      <div class="wf-step" data-step="2">
+        <div class="wf-icon">🐙</div>
+        <div class="wf-label">GitHub</div>
+        <div class="wf-desc">Push commits to remote repository on GitHub</div>
+      </div>
+      <div class="wf-arrow">→</div>
+      <div class="wf-step" data-step="3">
+        <div class="wf-icon">⚙️</div>
+        <div class="wf-label">CI/CD<br>Testing/Linting</div>
+        <div class="wf-desc">GitHub Actions auto-runs tests and linting on every push</div>
+      </div>
+      <div class="wf-arrow">→</div>
+      <div class="wf-step" data-step="4">
+        <div class="wf-icon">🌐</div>
+        <div class="wf-label">Hosting<br>Website + DB</div>
+        <div class="wf-desc">GitHub Pages (frontend) + Render.com (Node.js + PostgreSQL)</div>
+      </div>
+      <div class="wf-arrow">→</div>
+      <div class="wf-step" data-step="5">
+        <div class="wf-icon">🖥️</div>
+        <div class="wf-label">Web Browser</div>
+        <div class="wf-desc">Users visit the live, secure website</div>
+      </div>
+    </div>
+    <div class="workflow-stack">
+      <div class="stack-item"><span class="stack-icon">📝</span>VS Code</div>
+      <div class="stack-item"><span class="stack-icon">🔀</span>Git</div>
+      <div class="stack-item"><span class="stack-icon">🐙</span>GitHub</div>
+      <div class="stack-item"><span class="stack-icon">⚡</span>Actions CI/CD</div>
+      <div class="stack-item"><span class="stack-icon">📄</span>GitHub Pages</div>
+      <div class="stack-item"><span class="stack-icon">🟢</span>Node.js + Express</div>
+      <div class="stack-item"><span class="stack-icon">🐘</span>PostgreSQL</div>
+      <div class="stack-item"><span class="stack-icon">☁️</span>Render.com</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-num">05.</span>
+      <h2>CON<span class="accent">TACT</span></h2>
+      <div class="line"></div>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Let's Connect</h3>
+        <p>I'm open to internships, collaborations, and cybersecurity projects. Drop me a message!</p>
+        <div class="contact-links">
+          <a href="mailto:anush@email.com" class="contact-link">📧 anush@email.com</a>
+          <a href="https://github.com/anushg" class="contact-link" target="_blank">🐙 github.com/anushg</a>
+          <a href="https://linkedin.com/in/anushg" class="contact-link" target="_blank">💼 linkedin.com/in/anushg</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div id="form-status" class="form-status" style="display:none"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" id="fname" placeholder="Your name" required/>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" id="femail" placeholder="your@email.com" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" name="subject" id="fsubject" placeholder="What's this about?"/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" id="fmessage" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">SEND MESSAGE</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by <span class="highlight">Anush G</span> · BCA Cybersecurity · <span class="blink">©</span> 2025</p>
+    <p class="footer-sub">Deployed via GitHub Pages + Render.com</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
