@@ -63,13 +63,14 @@ photoUpload.addEventListener("change", (e) => {
 function animateBars() {
   document.querySelectorAll(".bar-fill").forEach(bar => {
     const rect = bar.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 50) {
+    if (rect.top < window.innerHeight) {
       bar.style.width = bar.dataset.w + "%";
     }
   });
 }
 window.addEventListener("scroll", animateBars);
-animateBars();
+// Also trigger on load after a short delay
+setTimeout(animateBars, 500);
 
 // ===== COUNTER ANIMATION =====
 function animateCounters() {
