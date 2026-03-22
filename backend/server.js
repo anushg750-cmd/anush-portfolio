@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 // ===== MIDDLEWARE =====
 app.use(cors({
   origin: [
-    'https://YOUR_GITHUB_USERNAME.github.io',  // Replace with your GitHub Pages URL
+    'https://anushg750-cmd.github.io',  // Replace with your GitHub Pages URL
     'http://localhost:5500',                    // VS Code Live Server
     'http://127.0.0.1:5500'
   ],
