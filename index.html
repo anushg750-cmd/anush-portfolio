@@ -39,28 +39,7 @@
           <div id="hero-output" class="hero-output"></div>
         </div>
       </div>
-      <div class="hero-photo-box">
-        <label for="photo-upload" class="photo-upload-label" id="photo-label">
-          <div class="photo-frame" id="photo-frame">
-            <div class="photo-placeholder" id="photo-placeholder">
-              <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <circle cx="30" cy="22" r="12" stroke="#00ff88" stroke-width="2"/>
-                <path d="M8 52c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="#00ff88" stroke-width="2"/>
-                <circle cx="30" cy="30" r="28" stroke="#00ff88" stroke-width="1" stroke-dasharray="4 4"/>
-              </svg>
-              <p>UPLOAD PHOTO</p>
-              <p class="small">Click to select image</p>
-            </div>
-            <img id="uploaded-photo" src="" alt="Anush G" style="display:none"/>
-          </div>
-        </label>
-        <input type="file" id="photo-upload" accept="image/*" style="display:none"/>
-        <div class="photo-caption">
-          <span class="tag">ID:</span> ANUSH_G
-          <br><span class="tag">ROLE:</span> BCA CYBER SEC
-          <br><span class="tag">STATUS:</span> <span class="blink green-blink">ACTIVE</span>
-        </div>
-      </div>
+      <!-- Photo removed from hero, now shown at bottom -->
     </div>
     <div class="hero-scroll-hint">scroll down ↓</div>
   </section>
@@ -268,6 +247,35 @@
           <span class="btn-icon">→</span>
         </button>
       </form>
+    </div>
+  </section>
+
+  <!-- PHOTO SECTION -->
+  <section id="photo-section">
+    <div class="section-header">
+      <span class="section-num">06.</span>
+      <h2>IDENT<span class="accent">ITY</span></h2>
+      <div class="line"></div>
+    </div>
+    <div class="identity-box">
+      <div class="photo-frame-bottom">
+        <img src="photo.jpg" alt="Anush G" id="profile-photo" onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex'"/>
+        <div id="photo-fallback" class="photo-fallback">
+          <svg width="80" height="80" viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="22" r="12" stroke="#00ff88" stroke-width="2"/>
+            <path d="M8 52c0-12.15 9.85-22 22-22s22 9.85 22 22" stroke="#00ff88" stroke-width="2"/>
+            <circle cx="30" cy="30" r="28" stroke="#00ff88" stroke-width="1" stroke-dasharray="4 4"/>
+          </svg>
+          <p>Add <strong>photo.jpg</strong> to your folder</p>
+        </div>
+      </div>
+      <div class="identity-details">
+        <div class="id-row"><span class="id-label">NAME</span><span class="id-value">Anush G</span></div>
+        <div class="id-row"><span class="id-label">DEGREE</span><span class="id-value">BCA — Cybersecurity</span></div>
+        <div class="id-row"><span class="id-label">ROLE</span><span class="id-value">Security Researcher & Web Developer</span></div>
+        <div class="id-row"><span class="id-label">GITHUB</span><span class="id-value"><a href="https://github.com/anushg750-cmd" target="_blank">@anushg750-cmd</a></span></div>
+        <div class="id-row"><span class="id-label">STATUS</span><span class="id-value"><span class="blink green-blink">● ACTIVE</span></span></div>
+      </div>
     </div>
   </section>
 
