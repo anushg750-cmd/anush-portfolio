@@ -116,7 +116,7 @@ const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("form-status");
 
 // *** REPLACE THIS URL with your actual Render.com backend URL after deployment ***
-const BACKEND_URL = "https://your-backend.onrender.com/api/contact";
+const BACKEND_URL = "https://portfolio-backend-n600.onrender.com/api/contact";
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
