@@ -161,47 +161,94 @@
       <h2>DEV<span class="accent">_WORKFLOW</span></h2>
       <div class="line"></div>
     </div>
-    <p class="workflow-desc">My HOD's Modern Web Development Workflow — the pipeline I follow for every project:</p>
-    <div class="workflow-pipeline">
-      <div class="wf-step" data-step="1">
-        <div class="wf-icon">📁</div>
-        <div class="wf-label">Local Git<br>Repository</div>
-        <div class="wf-desc">Write code, commit changes locally using Git version control</div>
+    <p class="workflow-desc">My HOD's Modern Web Development Workflow — implemented in this portfolio:</p>
+
+    <!-- EXACT DIAGRAM FROM HOD -->
+    <div class="hod-diagram">
+
+      <!-- Row 1: Main flow -->
+      <div class="hod-row hod-main-row">
+
+        <!-- Box 1: Local Git Repository -->
+        <div class="hod-box hod-blue">
+          <div class="hod-box-title">📁 Local Git Repository</div>
+          <div class="hod-box-inner">
+            <div class="hod-inner-item hod-green-box">HTML, CSS, JavaScript<br><span class="hod-sub">(Frontend)</span></div>
+            <div class="hod-inner-item hod-green-box">Node.js<br><span class="hod-sub">(Backend)</span></div>
+          </div>
+        </div>
+
+        <div class="hod-arrow-h">→</div>
+
+        <!-- Box 2: GitHub -->
+        <div class="hod-box hod-blue">
+          <div class="hod-box-title">🐙 GitHub</div>
+          <div class="hod-box-desc">GitHub / GitLab<br>Bitbucket</div>
+        </div>
+
+        <div class="hod-arrow-h">→</div>
+
+        <!-- Box 3: CI/CD -->
+        <div class="hod-box hod-blue">
+          <div class="hod-box-title">⚙️ CI / CD</div>
+          <div class="hod-box-desc">Circle CI, GitHub<br>Actions, Codeship</div>
+          <div class="hod-tag">Testing, Linting</div>
+        </div>
+
+        <div class="hod-arrow-h">→</div>
+
+        <!-- Box 4: Hosting -->
+        <div class="hod-box hod-blue">
+          <div class="hod-box-title">🌐 Hosting</div>
+          <div class="hod-box-desc">Website code + DB<br>Domain, DNS</div>
+        </div>
+
+        <div class="hod-arrow-h">→</div>
+
+        <!-- Box 5: Web Browser -->
+        <div class="hod-box hod-yellow">
+          <div class="hod-box-title">🖥️ Web Browser</div>
+          <div class="hod-box-desc">Live website<br>for users</div>
+        </div>
       </div>
-      <div class="wf-arrow">→</div>
-      <div class="wf-step" data-step="2">
-        <div class="wf-icon">🐙</div>
-        <div class="wf-label">GitHub</div>
-        <div class="wf-desc">Push commits to remote repository on GitHub</div>
+
+      <!-- Row 2: FTP path (alternative) -->
+      <div class="hod-ftp-row">
+        <div class="hod-ftp-spacer"></div>
+        <div class="hod-ftp-line">
+          <div class="hod-ftp-arrow-down">↓</div>
+          <div class="hod-box hod-red hod-ftp-box">
+            <div class="hod-box-title">🔄 FTP</div>
+            <div class="hod-box-desc">Direct upload<br>(alternative path)</div>
+          </div>
+          <div class="hod-ftp-arrow-right">→</div>
+        </div>
       </div>
-      <div class="wf-arrow">→</div>
-      <div class="wf-step" data-step="3">
-        <div class="wf-icon">⚙️</div>
-        <div class="wf-label">CI/CD<br>Testing/Linting</div>
-        <div class="wf-desc">GitHub Actions auto-runs tests and linting on every push</div>
+
+      <!-- Row 3: Local DB -->
+      <div class="hod-db-row">
+        <div class="hod-box hod-green hod-db-box">
+          <div class="hod-box-title">🐘 MySQL / PostgreSQL</div>
+          <div class="hod-box-desc">Local Database</div>
+        </div>
+        <div class="hod-db-arrow">↑ connects</div>
       </div>
-      <div class="wf-arrow">→</div>
-      <div class="wf-step" data-step="4">
-        <div class="wf-icon">🌐</div>
-        <div class="wf-label">Hosting<br>Website + DB</div>
-        <div class="wf-desc">GitHub Pages (frontend) + Render.com (Node.js + PostgreSQL)</div>
-      </div>
-      <div class="wf-arrow">→</div>
-      <div class="wf-step" data-step="5">
-        <div class="wf-icon">🖥️</div>
-        <div class="wf-label">Web Browser</div>
-        <div class="wf-desc">Users visit the live, secure website</div>
-      </div>
+
     </div>
-    <div class="workflow-stack">
-      <div class="stack-item"><span class="stack-icon">📝</span>VS Code</div>
-      <div class="stack-item"><span class="stack-icon">🔀</span>Git</div>
-      <div class="stack-item"><span class="stack-icon">🐙</span>GitHub</div>
-      <div class="stack-item"><span class="stack-icon">⚡</span>Actions CI/CD</div>
-      <div class="stack-item"><span class="stack-icon">📄</span>GitHub Pages</div>
-      <div class="stack-item"><span class="stack-icon">🟢</span>Node.js + Express</div>
-      <div class="stack-item"><span class="stack-icon">🐘</span>PostgreSQL</div>
-      <div class="stack-item"><span class="stack-icon">☁️</span>Render.com</div>
+
+    <!-- MY IMPLEMENTATION -->
+    <div class="hod-impl">
+      <div class="hod-impl-title">✅ MY IMPLEMENTATION</div>
+      <div class="hod-impl-grid">
+        <div class="hod-impl-item"><span class="impl-label">LOCAL REPO</span><span class="impl-value">Git + VS Code</span></div>
+        <div class="hod-impl-item"><span class="impl-label">REMOTE</span><span class="impl-value">GitHub</span></div>
+        <div class="hod-impl-item"><span class="impl-label">CI/CD</span><span class="impl-value">GitHub Actions</span></div>
+        <div class="hod-impl-item"><span class="impl-label">HOSTING</span><span class="impl-value">GitHub Pages</span></div>
+        <div class="hod-impl-item"><span class="impl-label">BACKEND</span><span class="impl-value">Node.js + Express</span></div>
+        <div class="hod-impl-item"><span class="impl-label">DATABASE</span><span class="impl-value">PostgreSQL</span></div>
+        <div class="hod-impl-item"><span class="impl-label">BACKEND HOST</span><span class="impl-value">Render.com</span></div>
+        <div class="hod-impl-item"><span class="impl-label">BROWSER</span><span class="impl-value">Live Website ✓</span></div>
+      </div>
     </div>
   </section>
 
