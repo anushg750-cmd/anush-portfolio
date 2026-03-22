@@ -495,8 +495,8 @@
   <script>
     const ADMIN_USER = "admin";
     const ADMIN_PASS = "adminanush";
+    const API = "https://portfolio-backend-n600.onrender.com/api/contacts";
 
-    // Allow Enter key on password field
     document.getElementById("loginPass").addEventListener("keydown", e => {
       if (e.key === "Enter") doLogin();
     });
@@ -522,63 +522,60 @@
       document.getElementById("loginError").style.display = "none";
     }
 
-    function loadDashboard() {
-      const msgs = JSON.parse(localStorage.getItem("portfolio_messages") || "[]");
-
-      // Stats
-      document.getElementById("totalCount").textContent = msgs.length;
-
-      const today = new Date().toLocaleDateString();
-      const todayMsgs = msgs.filter(m => new Date(m.id).toLocaleDateString() === today);
-      document.getElementById("todayCount").textContent = todayMsgs.length;
-
-      if (msgs.length > 0) {
-        const last = new Date(msgs[0].id);
-        document.getElementById("lastDate").textContent =
-          last.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
-      }
-
-      // Messages
+    async function loadDashboard() {
       const list = document.getElementById("messagesList");
-      if (msgs.length === 0) {
-        list.innerHTML = `
-          <div class="empty-inbox">
-            <span class="empty-icon">📭</span>
-            <p>No messages yet.<br>
-            Share your portfolio at<br>
-            <a href="https://anushg750-cmd.github.io/anush-portfolio" target="_blank">anushg750-cmd.github.io/anush-portfolio</a></p>
-          </div>`;
-        return;
-      }
+      list.innerHTML = '<div class="empty-inbox"><span class="empty-icon">⏳</span><p>Loading messages...</p></div>';
 
-      list.innerHTML = msgs.map((m, i) => `
-        <div class="msg-card" id="msg-${m.id}">
-          <div class="msg-card-top">
-            <span class="msg-sender">${esc(m.name)}</span>
-            <div>
-              <span class="msg-time">${m.time}</span>
-              <button class="msg-delete" onclick="deleteMsg(${m.id})" title="Delete">🗑</button>
+      try {
+        const res = await fetch(API);
+        const data = await res.json();
+        const msgs = data.contacts || [];
+
+        // Stats
+        document.getElementById("totalCount").textContent = msgs.length;
+
+        const today = new Date().toLocaleDateString("en-IN");
+        const todayCount = msgs.filter(m =>
+          new Date(m.created_at).toLocaleDateString("en-IN") === today
+        ).length;
+        document.getElementById("todayCount").textContent = todayCount;
+
+        if (msgs.length > 0) {
+          const last = new Date(msgs[0].created_at);
+          document.getElementById("lastDate").textContent =
+            last.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+        }
+
+        // Messages
+        if (msgs.length === 0) {
+          list.innerHTML = `
+            <div class="empty-inbox">
+              <span class="empty-icon">📭</span>
+              <p>No messages yet.<br>Share your portfolio at<br>
+              <a href="https://anushg750-cmd.github.io/anush-portfolio" target="_blank">anushg750-cmd.github.io/anush-portfolio</a></p>
+            </div>`;
+          return;
+        }
+
+        list.innerHTML = msgs.map(m => `
+          <div class="msg-card" id="msg-${m.id}">
+            <div class="msg-card-top">
+              <span class="msg-sender">${esc(m.name)}</span>
+              <span class="msg-time">${new Date(m.created_at).toLocaleString("en-IN")}</span>
             </div>
+            <div class="msg-email">📧 ${esc(m.email)}</div>
+            <div class="msg-subject">📌 ${esc(m.subject)}</div>
+            <div class="msg-body">${esc(m.message)}</div>
           </div>
-          <div class="msg-email">📧 ${esc(m.email)}</div>
-          <div class="msg-subject">📌 ${esc(m.subject)}</div>
-          <div class="msg-body">${esc(m.message)}</div>
-        </div>
-      `).join("");
-    }
+        `).join("");
 
-    function deleteMsg(id) {
-      let msgs = JSON.parse(localStorage.getItem("portfolio_messages") || "[]");
-      msgs = msgs.filter(m => m.id !== id);
-      localStorage.setItem("portfolio_messages", JSON.stringify(msgs));
-      loadDashboard();
+      } catch (err) {
+        list.innerHTML = `<div class="empty-inbox"><span class="empty-icon">❌</span><p>Failed to load messages.<br>${err.message}</p></div>`;
+      }
     }
 
     function clearAll() {
-      if (confirm("Delete ALL messages? This cannot be undone.")) {
-        localStorage.removeItem("portfolio_messages");
-        loadDashboard();
-      }
+      alert("To delete messages, go to your Render PostgreSQL dashboard.");
     }
 
     function esc(str) {
